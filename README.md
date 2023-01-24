@@ -1,39 +1,200 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+## Easy Go
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+Easy Go is a powerful Flutter package that makes navigation between pages a breeze.
+With a simple and intuitive API, this package allows you to easily navigate between
+pages with beautiful animations and custom transitions.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+![Imgur Image](https://imgur.com/a/uiIlJ1q.gif)
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+The package provides a wide range of features to enhance your app's navigation, such as:
+
+- Support for custom page transitions and animations
+- Provides an easy way to set transitions for each platform (iOS, Android, Web, etc.)
+- Built-in animations such as slide, fade, and scale
+- Support for named routes and automatic route generation
+- The ability to pass data between pages
+- Easy to debug and test
+
+
+A simple and easy-to-use API that can be integrated seamlessly into your existing app
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add the package to your pubspec.yaml file:
 
-## Usage
+```yaml
+dependencies:
+  easy_go: latest_version
+```
+import the package in your dart file:
+``` dart
+import 'package:easy_go/easy_go.dart';
+```
+run the following command in your project's root directory to init the package:
+```bash
+dart go_init.dart --name=NamedRoutes
+```
+This will create a file named named_routes.dart in your project's root directory.
+This file will contain all the named routes in your app.
+You can add more routes to this file manually.
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+
+## Setup the Package
+
+1.Pass the navigator key (Go.navigatorKey) to the MaterialApp widget
+```dart
+MaterialApp(
+  navigatorKey: Go.navigatorKey,
+  home: const HomePage(),
+),
+```
+2. To use named routes, you need to make sure that named_routes.dart is imported in your dart file.
+3. Create a Router Generator class that extends GoGenerator giving your customizations for each route.
+ ex :
+```dart
+class RouterGenerator extends GoGenerator {
+  @override
+  Route<dynamic> goRoutes(RouteSettings settings) {
+    final namedRoute = routerName(settings); /// You must include that line
+    switch (namedRoute) {
+      case NamedRoutes.home:
+        return GoBuilder().build(
+          const HomePage(),
+          settings: settings,
+          transition: TransitionType.fade,
+        );
+      case NamedRoutes.secondPage:
+        return GoBuilder().build(
+          const SecondPage(),
+          settings: settings,
+          transition: TransitionType.fade,
+        );
+      case NamedRoutes.thirdPage:
+        return GoBuilder().build(const ThirdPage(), settings: settings);
+      case NamedRoutes.fourthPage:
+        return GoBuilder().build(const FourthPage(), settings: settings);
+    }
+  }
+
+  @override
+  Route<dynamic> undefineRoute() {
+    return MaterialPageRoute(
+      builder: (_) => const Scaffold(
+        body: Center(
+          child: Text('No route exists here ! '),
+        ),
+      ),
+    );
+  }
+}
+
+```
+4. Pass the Router Generator class to MaterialApp's onGenerateRoute parameter.
+```dart
+MaterialApp(
+  navigatorKey: Go.navigatorKey,
+  onGenerateRoute: RouterGenerator().goRoutes,
+  home: const HomePage(),
+),
+```
+
+
+# Usage
+Once you finished setting up the package, you can use it in your app by calling the Go class methods.
+
+* For Simple navigation between pages
+```dart
+TextButton(
+  onPressed: () {
+    /// This will create a fade transition between the current page and the next page
+     Go.to(const SecondPage(), transition:  TransitionType.fade,options:FadeAnimationOptions());
+  },
+  child: Text('Go to page 2'),
+),
+```
+* For passing data between pages with named routes
 
 ```dart
-const like = 'sample';
+TextButton(
+  onPressed: () {
+    /// This will create a fade transition between the current page and the next page
+    Go.toNamed(NamedRoutes.first, arguments: 'Hello World');
+  },
+  child: Text('Go to second'),
+),
 ```
+to get the data in the second page, you can use the following code:
+```dart
+class SecondPage extends StatelessWidget {
+  const SecondPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final data = context.arguments ;
+    return Scaffold(
+      body: Center(
+        child: Text(data), /// This will display 'Hello World'
+      ),
+    );
+  }
+}
+```
+# Platform Specific Transitions
+
+By default Go provides a suitable transition for each platform ios , android and web.
+
+To use a custom transition for a specific platform, you can use the GoBuilder class before running the app
+
+ex :
+```dart
+void main() {
+  GoBuilder().initAppRouter(
+    config: PlatformConfig(
+      android: CustomPageRouterCreator(
+        parentTransition: TransitionType.slide,
+        parentOptions: const SlideAnimationOptions(
+          direction: SlideDirection.topToBottom,
+        ),
+      ),
+       /// ios: Add IOS Animation Options
+      /// web: Add Web Animation Options
+    ),
+  );
+  runApp(MyApp());
+}
+```
+This will create a slide transition for android and the default transition for ios (Cupertino Transition) and web.
+
+
+## Parameters
+
+- **page**: The page to navigate to
+- **transition**: The transition type to use it can be one of the following:
+  - **TransitionType.slide**: Slide transition
+  - **TransitionType.fade**: Fade transition
+  - **TransitionType.scale**: Scale transition
+  and many more ....
+- **options**: The transition options to use for each transitionType
+  - **SlideAnimationOptions**: The options for the slide transition
+  - **FadeAnimationOptions**: The options for the fade transition
+  and many more ....
+
+## Options Parameters
+
+- **duration**: The duration of the transition
+- **reverseDuration**: The duration of the reverse transition
+- **curve**: The curve of the transition
+- **reverseCurve**: The curve of the reverse transition
+- **secondaryTransition**: The secondary gives a combination of two transitions for example: Slide and Fade
+Note : The secondary transition is set to false by default,
+       if enabled it gives a fade added to the current transition for now (update coming soon)
+
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
+TODO: Tell users more about the package: where to find more information, how to
+contribute to the package, how to file issues, what response they can expect
 from the package authors, and more.
