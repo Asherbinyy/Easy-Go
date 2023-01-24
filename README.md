@@ -4,10 +4,8 @@ Easy Go is a powerful Flutter package that makes navigation between pages a bree
 With a simple and intuitive API, this package allows you to easily navigate between
 pages with beautiful animations and custom transitions.
 
-![Imgur Image](https://imgur.com/a/uiIlJ1q.gif)
 ## images
-![Imgur Image](https://imgur.com/a/4Z7Z2Zg.gif)
-![Imgur Image](https://imgur.com/a/4Z7Z2Zg)
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/uiIlJ1q"  ><a href="//imgur.com/a/uiIlJ1q">Easy Go Package </a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 ## Features
 
 The package provides a wide range of features to enhance your app's navigation, such as:
