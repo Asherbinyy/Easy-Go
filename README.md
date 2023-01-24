@@ -5,8 +5,9 @@ With a simple and intuitive API, this package allows you to easily navigate betw
 pages with beautiful animations and custom transitions.
 
 ![Imgur Image](https://imgur.com/a/uiIlJ1q.gif)
-
-
+## images
+![Imgur Image](https://imgur.com/a/4Z7Z2Zg.gif)
+![Imgur Image](https://imgur.com/a/4Z7Z2Zg)
 ## Features
 
 The package provides a wide range of features to enhance your app's navigation, such as:
