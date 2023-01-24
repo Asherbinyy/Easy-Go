@@ -206,8 +206,8 @@ MIT License (MIT)
 # Contact me
 
 - Gmail: ahmed.elsherbiny2020@gmail.com
-- LinkedIn:<a href="https://www.linkedin.com/in/ahmed-elsherbiny-0b0b1b1b9/">Sherbini</a>
-- linktree: <a href="https://linktr.ee/sherbinovic">sherbinovic</a>
+- LinkedIn:<a href="https://www.linkedin.com/in/ahmed-elsherbiny-0b0b1b1b9/"> Sherbini</a>
+- linktree: <a href="https://linktr.ee/sherbinovic"> Sherbinovic</a>
 
 # Donate
 
