@@ -5,7 +5,9 @@ With a simple and intuitive API, this package allows you to easily navigate betw
 pages with beautiful animations and custom transitions.
 
 
-<img src="https://imgur.com/a/uiIlJ1q.gif" width="300" height="600" />
+#Feature GIF (from project)
+
+![Easy Go](https://raw.githubusercontent.com/Asherbinyy/Easy-Go/sherbini/go.gif)
 
 ## Features
 
