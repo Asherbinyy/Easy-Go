@@ -193,8 +193,34 @@ Note : The secondary transition is set to false by default,
        if enabled it gives a fade added to the current transition for now (update coming soon)
 
 
-## Additional information
+## Publisher Notes
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+- This package is still under development and will be updated frequently.
+- If you have any suggestions or issues, please feel free to open an issue on GitHub or contact me on Gmail <ahmed.elsherbiny2020@gmail.com>.
+- If you like this package, please consider giving it a star on GitHub. It helps a lot!
+
+## License
+
+MIT License (MIT)
+
+# Contact me
+
+- Gmail: ahmed.elsherbiny2020@gmail.com
+- LinkedIn:<a href="https://www.linkedin.com/in/ahmed-elsherbiny-0b0b1b1b9/">Sherbini</a>
+- linktree: <a href="https://linktr.ee/sherbinovic">sherbinovic</a>
+
+# Donate
+
+If you like this package, you can buy me a coffee :)
+<a href="https://www.buymeacoffee.com/sherbinovic" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+
+
+# Contributing
+
+If you would like to contribute to the package, please check out our GitHub repository. We welcome all contributions, including bug reports, feature requests, and pull requests.
+If you encounter any issues with the package, please file a bug report on our GitHub repository. Our team will do our best to respond to your report in a timely manner.
+Thank you for using easy_go and we hope it makes your development experience more enjoyable!"
+
+Made with love by Sherbini ❤
+
+
