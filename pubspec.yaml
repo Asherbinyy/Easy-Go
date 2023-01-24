@@ -1,16 +1,21 @@
 name: easy_go
-description: A starting point for Dart libraries or applications.
+description: A Flutter package for easy routing and navigation
 version: 1.0.0
-# homepage: https://www.example.com
+homepage: https://github.com/Asherbinyy/Easy-Go.git
+#authors:
+#  - Sherbini <ahmed.elsherbiny2020@gmail.com>
+
 
 environment:
   sdk: '>=2.18.5 <3.0.0'
 
-# dependencies:
-#   path: ^1.8.0
+dependencies:
+  flutter:
+    sdk: flutter
+
 
 dev_dependencies:
-  lints: ^2.0.0
-  test: ^1.16.0
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.1
 
-# d
