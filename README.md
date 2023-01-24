@@ -5,7 +5,7 @@ With a simple and intuitive API, this package allows you to easily navigate betw
 pages with beautiful animations and custom transitions.
 
 ## images
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/uiIlJ1q"  ><a href="//imgur.com/a/uiIlJ1q">Easy Go Package </a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<img src="https://imgur.com/a/uiIlJ1q.gif"/>
 ## Features
 
 The package provides a wide range of features to enhance your app's navigation, such as:
